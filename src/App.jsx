@@ -14,6 +14,7 @@ import { Carousel } from 'react-responsive-carousel';
 import data from './data/odds';
 
 import './App.css'
+import logo from './assets/logo.png'
 
 const oddsData = data;
 
@@ -24,7 +25,7 @@ function Home() {
     const [flip, setFlip] = useState(Array(25).fill(false));
     const [sort, setSort] = useState(14)
     const [disbleButtonAndSelect, setDisbleButtonAndSelect] = useState(false);
-    const [money, setMoney] = useState(175);
+    const [money, setMoney] = useState(50);
     const [limit, setLimit] = useState(oddsData[mines - 1].length);
     const [odd, setOdd] = useState(0);
     const [numberClick, setNumberClick] = useState(1);
@@ -33,6 +34,8 @@ function Home() {
     const [gain, setGain] = useState(0);
     const [btnCashout, setBtnCashout] = useState(true);
     const [handleModal, setHandleModal] = useState(false);
+    const [handleModalLoss, setHandleModalLoss] = useState(false)
+    const [handleModalAddCash, setHandleModalAddCash] = useState(false)
     const [cardClickLimit, setCardClickLimit] = useState(0)
     const [bomb, setBomb] = useState(Array(25).fill(false));
     const [star, setStar] = useState(Array(25).fill(false));
@@ -50,44 +53,53 @@ function Home() {
         marginRight: '-35%',
         padding: '0px',
         transform: 'translate(-50%, -50%)',
+        borderRadius: '30px'
         },
     }; 
 
     for (let i = 0; i < 25; i++) {
     listItems.push(
         <div id={i} key={i} 
-        onClick={() => {
-            setCardClickLimit(cardClickLimit + 1) //limite de clicks no card
-            if(cardClickLimit < limit){
-                if(verific[i]){
-                    verific[i] = false
-                    if(disbleButtonAndSelect){
-                        circle[i] = false
-                        console.log(verific)
-                        if(flip[i]){
-                            star[i] = true
-                        }else{
-                            bomb[i] = true
-                            
-                        }
-                        //state limit é a quantidade de clicks por mines no selcted
-                        if (cashoutEnable) {
-                            cardClick(numberClick)
-                            flip[i] = true
+        onClick={() => { 
+            if(cardClickLimit < limit && verific[i]){ // verificacao para nao virar mais cards que o permitido && verificação para não clicar no mesmo card
+                verific[i] = false // ao passar para false não entra no if, sendo assim não permite dois clicks no mesmo card
+                if(disbleButtonAndSelect){
+                    circle[i] = false
+                    setCardClickLimit(cardClickLimit + 1) //limite de clicks no card
+                    if(flip[i]){
+                        star[i] = true //altera style
+                    }else{// se caso clicar na bomba
+                        bomb[i] = true //altera style 
+                        setTimeout(()=> {
+                            setHandleModalLoss(true)
+                            setDisbleButtonAndSelect(true)
+                            setCashoutEnable(false)
                             setBtnCashout(false)
-                                }
-                            } 
+                            return
+                          }, 500);
+                        
+                        
+                    }
+                    if (cashoutEnable) {
+                        cardClick(numberClick)
+                        flip[i] = true
+                        setBtnCashout(false)
+                        }
+                    }   
+                }
+                if(cardClickLimit >= limit ){ // finalizar o jogo apos dar o utlimo click
+                    cashout()
+                    setMoney(bet * odd + money)
+                    setCashoutEnable(false)
+                    setBet(parseFloat(parseFloat(0).toFixed(2)))
+                    reset()
                 }
             }
-            
-            
-        }
-        
         } 
         // className={`card ${flip[i] ? 'flipCard' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}> {flip[i] ? <BsStarFill className="star"/> : <BsCircleFill className="circle"/> } </div>
-        className={`card ${bomb[i] ? 'flipCard' : ''} ${star[i] ? 'flipCard' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}>
+        className={`card ${bomb[i] ? 'flipCardBomb' : ''} ${star[i] ? 'flipCardStar' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}>
             
-            {bomb[i] ? <FaBomb className={`star`} /> : null}
+            {bomb[i] ? <FaBomb className={`bomb`} /> : null}
 
             {star[i] ? <BsStarFill className={`star`}/> : null}
 
@@ -96,71 +108,68 @@ function Home() {
     );
     }
 
-   
-    
-    
     useEffect(()=>{
         setDisbleButtonAndSelect(false)
         switch (mines){
             case 1:
-                setSort(14)
+                setSort(24)
             break 
             case 2:
-                setSort(13)
+                setSort(23)
             break 
             case 3:
-                setSort(13)
+                setSort(22)
             break 
             case 4:
-                setSort(12)
+                setSort(21)
             break 
             case 5:
-                setSort(12)
+                setSort(20)
             break 
             case 6:
-                setSort(11)
+                setSort(19)
             break 
             case 7:
-                setSort(10)
+                setSort(18)
             break 
             case 8:
-                setSort(10)
+                setSort(17)
             break 
             case 9:
-                setSort(9)
+                setSort(16)
             break 
             case 10:
-                setSort(9)
+                setSort(15)
             break 
             case 11:
-                setSort(8)
+                setSort(14)
             break 
             case 12:
-                setSort(7)
+                setSort(13)
             break 
             case 13:
-                setSort(7)
+                setSort(12)
             break 
             case 14:
-                setSort(6)
+                setSort(11)
             break 
             case 15:
-                setSort(6)
+                setSort(10)
             break 
             case 16:
-                setSort(5)
+                setSort(9)
             break 
             case 17:
-                setSort(4)
+                setSort(8)
             break 
             case 18:
-                setSort(4)
+                setSort(7)
             break 
             case 19:
-                setSort(3)
+                setSort(6)
             break 
             case 20:
-                setSort(3)
+                setSort(5)
             break 
         }
 
@@ -177,6 +186,7 @@ function Home() {
         for(let i = 0; i < sort; i++){
             flip[i] = true
         }
+        console.log(flip)
         //segundo embaralhamos elas
         flip.sort(() => Math.random() - 0.5);
         //as que ficarem false serao estrelas
@@ -184,6 +194,15 @@ function Home() {
         console.log(flip)
     }
     
+    const reset = ()=>{
+        setFlip(Array(25).fill(false))
+        setDisbleButtonAndSelect(false)
+        setBomb(Array(25).fill(false));
+        setStar(Array(25).fill(false));
+        setCircle(Array(25).fill(true));
+        setVerific(Array(25).fill(true));
+        setCardClickLimit(0)
+    }
 
     const handleMines = () => {
         setCashoutEnable(true);
@@ -269,21 +288,64 @@ function Home() {
                 >
                     <div className="modalWrapper">
                         <h2>Deu Green ✅ </h2>
-                        <p>Você ganhou BRL {gain}</p>
+                        <p>Você ganhou {gain}$</p>
+                        <p>Continue Jogando</p>
                         <button className="btnGreen" onClick={() => {
                             setHandleModal(false)
-                            setFlip(Array(25).fill(false))
-                            setDisbleButtonAndSelect(false)
+                            reset()
                         }}>Continuar jogando</button>
+                    </div>
+                </Modal>
+                <Modal
+                    isOpen={handleModalLoss}
+                    style={customStyles}
+                    contentLabel="Example Modal"
+                    ariaHideApp={false}
+                >
+                    <div className="modalWrapper">
+                        <h2 style={{color: '#df0202'}}>Você perdeu</h2>
+                        <p>Você perdeu {bet}$ Referente ao valor apostado</p>
+                        <p>Não desista continue jogando!</p>
+                        <button className="btnRed" onClick={() => {
+                            setHandleModalLoss(false)
+                            setDisbleButtonAndSelect(false)
+                            setBet(parseFloat(0).toFixed(2))
+                            reset()
+                        }}>Continuar jogando</button>
+                    </div>
+                </Modal>
+                <Modal
+                    isOpen={handleModalAddCash}
+                    style={customStyles}
+                    contentLabel="Example Modal"
+                    ariaHideApp={false}
+                >
+                    <div className="modalAddCash">
+                        <div className="btnClose">
+                            <button onClick={()=> setHandleModalAddCash(false)}>X</button>
+                        </div>  
+                        <h2 style={{color: '#fff', marginTop: '-10px'}}> Saldo: <span style={{color: '#64b846'}}>{money.toFixed(2)}</span></h2>
+                        <div className="buttonsAddCash">
+                            <button onClick={()=> setMoney(money+10)}>+10,00</button>
+                            <button onClick={()=> setMoney(money+20)}>+20,00</button>
+                            <button onClick={()=> setMoney(money+50)}>+50,00</button>
+                            <button onClick={()=> setMoney(money+100)}>+100,00</button>
+                            <button onClick={()=> setMoney(money+200)}>+200,00</button>
+                            <button onClick={()=> setMoney(money+500)}>+500,00</button>
+                            <button onClick={()=> setMoney(money+1000)}>+1000,00</button>      
+                        </div>
                     </div>
                 </Modal>
                 {/* COMEÇAR AQUI */}
                 <header>
-                    <img src="https://www.quintoquartobr.com/wp-content/uploads/2022/07/f12bet_logo-300x75.png" width={150}/>
+                    <img src={logo} width={50} />
 
                     <div className="balanceWrapper">
-                        <span>Saldo: </span>
-                        <span className="balance"> BRL {money.toFixed(2)}</span> 
+                        <div>
+                            <span style={{fontWeight: 600}}>Saldo:</span>
+                            <span className="balance"> BRL {money.toFixed(2)}</span> 
+                        </div>
+                        <button className="addMoney" style={disbleButtonAndSelect ? {opacity: '.8'} : {}} disabled={disbleButtonAndSelect}  onClick={()=>setHandleModalAddCash(true)}>Adicionar dinheiro</button>
                     </div>                   
                 </header>
                 <main>
@@ -383,12 +445,7 @@ function Home() {
                                         setMoney(bet * odd + money)
                                         setCashoutEnable(false)
                                         setBet(parseFloat(parseFloat(0).toFixed(2)))
-                                        setCardClickLimit(0)
-                                        //zerando os cards
-                                        setStar(Array(25).fill(false))
-                                        setBomb(Array(25).fill(false))
-                                        setCircle(Array(25).fill(true))
-                                        setVerific(Array(25).fill(true))
+                                        reset()
                                         }
                                     } 
                                     >
@@ -401,8 +458,8 @@ function Home() {
                                             handleMines()
                                             setDisbleButtonAndSelect(true)
                                             random()
+                                            setMoney(money - bet)
                                         }
-                                        
                                         }}>
                                         <BsFillCalculatorFill/> Bet
                                     </button>
