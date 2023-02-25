@@ -72,13 +72,15 @@ function Home() {
                         bomb[i] = true //altera style 
                         setTimeout(()=> {
                             setHandleModalLoss(true)
-                            setDisbleButtonAndSelect(true)
-                            setCashoutEnable(false)
-                            setBtnCashout(false)
-                            setOdd(0)
+                            
                             
                           }, 500);
-                          return  
+                        setDisbleButtonAndSelect(true)
+                        setCashoutEnable(false)
+                        setBtnCashout(false)
+                        setOdd(0)
+
+                        return  
                         
                     }
                     if (cashoutEnable) {
