@@ -333,7 +333,8 @@ function Home() {
                             <button onClick={()=> setMoney(money+100)}>+100,00</button>
                             <button onClick={()=> setMoney(money+200)}>+200,00</button>
                             <button onClick={()=> setMoney(money+500)}>+500,00</button>
-                            <button onClick={()=> setMoney(money+1000)}>+1000,00</button>      
+                            <button onClick={()=> setMoney(money+1000)}>+1000,00</button>     
+                            <button onClick={()=> setMoney(money+2000)}>+2000,00</button>   
                         </div>
                     </div>
                 </Modal>
