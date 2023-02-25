@@ -68,6 +68,11 @@ function Home() {
                     setCardClickLimit(cardClickLimit + 1) //limite de clicks no card
                     if(flip[i]){
                         star[i] = true //altera style
+                        if (cashoutEnable) {
+                            cardClick(numberClick)
+                            flip[i] = true
+                            setBtnCashout(false)
+                            }
                     }else{// se caso clicar na bomba
                         setCardClickLimit(100)
                         setDisbleButtonAndSelect(true)
@@ -80,11 +85,7 @@ function Home() {
                         
                           return  
                     }
-                    if (cashoutEnable) {
-                        cardClick(numberClick)
-                        flip[i] = true
-                        setBtnCashout(false)
-                        }
+                    
                     }   
                 }
                 if(cardClickLimit >= limit ){ // finalizar o jogo apos dar o utlimo click
