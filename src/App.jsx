@@ -70,6 +70,7 @@ function Home() {
                         star[i] = true //altera style
                     }else{// se caso clicar na bomba
                         bomb[i] = true //altera style 
+                        setCardClickLimit(100)
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
                             setDisbleButtonAndSelect(true)
@@ -78,7 +79,7 @@ function Home() {
                             setOdd(0)             
                           }, 500);
                         
-                        setCardClickLimit(100)
+                        
                         
                     }
                     if (cashoutEnable) {
