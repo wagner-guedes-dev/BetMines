@@ -72,14 +72,15 @@ function Home() {
                         setCardClickLimit(100)
                         setOdd(0)   
                         bomb[i] = true //altera style 
-                        setDisbleButtonAndSelect(true)
-                        setCashoutEnable(false)
-                        setBtnCashout(false)
+                        
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
+                            setDisbleButtonAndSelect(true)
+                            setCashoutEnable(false)
+                            setBtnCashout(false)
                           }, 800);
                         
-                        
+                        return
                         
                     }
                     if (cashoutEnable) {
