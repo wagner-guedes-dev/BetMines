@@ -79,7 +79,7 @@ function Home() {
                             setBtnCashout(false)
                           }, 800);
                         
-                        return
+
                         
                     }
                     if (cashoutEnable) {
