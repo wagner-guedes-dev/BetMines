@@ -20,7 +20,7 @@ body{
 main{
   display: flex;
   justify-content: center;
-  margin-top: -45px;
+  margin-top: -30px;
 }
 
 header{
@@ -714,18 +714,15 @@ input::-webkit-inner-spin-button {
     width: 75px;
   }
 
-  header img{
-    display: none;
-  }
-  
+ 
   main{
     flex-direction: column;
     align-items: center;
-    margin-top: -40px;
+    margin-top: 0px;
   }
 
   header{
-    justify-content: end;
+    justify-content: space-between;
   }
   .carouselItem .value {
     height: 23px;
@@ -733,7 +730,8 @@ input::-webkit-inner-spin-button {
   } 
 
   header img{
-    width: 40px !important;
+    width: 50px !important;
+    padding-left: 10px;
   }
 
   .carouselItem .hits {
