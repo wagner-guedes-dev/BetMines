@@ -71,16 +71,14 @@ function Home() {
                     }else{// se caso clicar na bomba
                         bomb[i] = true //altera style 
                         setTimeout(()=> {
-                            setHandleModalLoss(true)
-                            
-                            
+                            setHandleModalLoss(true)     
+                            setDisbleButtonAndSelect(true)
+                            setCashoutEnable(false)
+                            setBtnCashout(false)
+                            setOdd(0)             
                           }, 500);
-                        setDisbleButtonAndSelect(true)
-                        setCashoutEnable(false)
-                        setBtnCashout(false)
-                        setOdd(0)
-
-                        return  
+                        
+                        setCardClickLimit(100)
                         
                     }
                     if (cashoutEnable) {
