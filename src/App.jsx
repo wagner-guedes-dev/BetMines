@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { BsFillCalculatorFill, BsCircleFill, BsStarFill } from 'react-icons/bs';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-import { FaCoins } from 'react-icons/fa';
+import { FaCoins, FaBomb } from 'react-icons/fa';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -33,8 +33,11 @@ function Home() {
     const [gain, setGain] = useState(0);
     const [btnCashout, setBtnCashout] = useState(true);
     const [handleModal, setHandleModal] = useState(false);
-
-
+    const [cardClickLimit, setCardClickLimit] = useState(0)
+    const [bomb, setBomb] = useState(Array(25).fill(false));
+    const [star, setStar] = useState(Array(25).fill(false));
+    const [circle, setCircle] = useState(Array(25).fill(true));
+    const [verific, setVerific] = useState(Array(25).fill(true));
     
     const listItems = [];
 
@@ -54,28 +57,47 @@ function Home() {
     listItems.push(
         <div id={i} key={i} 
         onClick={() => {
-                if(flip[i]){
-                //    colocar aqui notificação para não selecionar o mesmo card -----
-                }else{
-                    if (cashoutEnable) {
-                        cardClick(numberClick)
-                        flip[i] = true
-                        setBtnCashout(false)
-                    }
+            setCardClickLimit(cardClickLimit + 1) //limite de clicks no card
+            if(cardClickLimit < limit){
+                if(verific[i]){
+                    verific[i] = false
+                    if(disbleButtonAndSelect){
+                        circle[i] = false
+                        console.log(verific)
+                        if(flip[i]){
+                            star[i] = true
+                        }else{
+                            bomb[i] = true
+                            
+                        }
+                        //state limit é a quantidade de clicks por mines no selcted
+                        if (cashoutEnable) {
+                            cardClick(numberClick)
+                            flip[i] = true
+                            setBtnCashout(false)
+                                }
+                            } 
                 }
             }
-        } 
-        className={`${flip[i] ? 'flipCard' : 'card'} ${disbleButtonAndSelect ? '' : 'disabled'}`}> {flip[i] ? <BsStarFill className="star"/> : <BsCircleFill className="circle"/> } </div>
+            
+            
+        }
         
+        } 
+        // className={`card ${flip[i] ? 'flipCard' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}> {flip[i] ? <BsStarFill className="star"/> : <BsCircleFill className="circle"/> } </div>
+        className={`card ${bomb[i] ? 'flipCard' : ''} ${star[i] ? 'flipCard' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}>
+            
+            {bomb[i] ? <FaBomb className={`star`} /> : null}
+
+            {star[i] ? <BsStarFill className={`star`}/> : null}
+
+            {circle[i] ? <BsCircleFill className="circle "/> :  null}
+        </div>
     );
     }
 
    
-    const minesSelected = (event) => {
-        setMines(parseInt(event.target.value));
-        setFlip(flip.map(() => false));
-        // setBtnMsn(true)
-    };
+    
     
     useEffect(()=>{
         setDisbleButtonAndSelect(false)
@@ -145,15 +167,30 @@ function Home() {
         setLimit(oddsData[mines - 1].length)
     },[mines])
 
+    const minesSelected = (event) => {
+        setMines(parseInt(event.target.value));
+        setFlip(flip.map(() => false));
+    };
+    
+    const random = ()=>{
+        //primeiro vamos colocar itens falses no array
+        for(let i = 0; i < sort; i++){
+            flip[i] = true
+        }
+        //segundo embaralhamos elas
+        flip.sort(() => Math.random() - 0.5);
+        //as que ficarem false serao estrelas
+        //as que ficaram true serao bombas
+        console.log(flip)
+    }
+    
+
     const handleMines = () => {
         setCashoutEnable(true);
     }
 
     const cardClick = (position) => {
-        console.log(position, limit, cashoutEnable)
         if (cashoutEnable && (position <= limit)) {
-            console.log(limit)
-            console.log(cashoutEnable)
             let filtered = oddsData[mines -1].filter((i) => {
                 return i.id == position
             })
@@ -167,7 +204,6 @@ function Home() {
         if (odd !== 0) {
             const newMoney = odd * bet;
             let moneyFormatted = newMoney.toFixed(2);
-            console.log(moneyFormatted);
             setGain(moneyFormatted);
             setTimeout(() => {
                 setHandleModal(true);
@@ -211,7 +247,7 @@ function Home() {
              {
                  oddsData[mines -1].map((item, index) => {
                      return (
-                     <div className="carouselItem" id={item.id}>  
+                     <div className="carouselItem" id={item.id} key={item.id}>  
                          <span className="value">{item.value}</span>
                          <span className="hits">{item.id} hits</span>
                      </div>
@@ -347,6 +383,12 @@ function Home() {
                                         setMoney(bet * odd + money)
                                         setCashoutEnable(false)
                                         setBet(parseFloat(parseFloat(0).toFixed(2)))
+                                        setCardClickLimit(0)
+                                        //zerando os cards
+                                        setStar(Array(25).fill(false))
+                                        setBomb(Array(25).fill(false))
+                                        setCircle(Array(25).fill(true))
+                                        setVerific(Array(25).fill(true))
                                         }
                                     } 
                                     >
@@ -358,6 +400,7 @@ function Home() {
                                         if(bet != 0 && bet <= money){
                                             handleMines()
                                             setDisbleButtonAndSelect(true)
+                                            random()
                                         }
                                         
                                         }}>
