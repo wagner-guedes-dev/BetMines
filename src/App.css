@@ -717,18 +717,18 @@ input::-webkit-inner-spin-button {
   main{
     flex-direction: column;
     align-items: center;
-    margin-top: -50px;
+    
   }
 
   .carouselItem .value {
     height: 23px;
     line-height: 23px;
   } 
-  
+
   header img{
-    width: 30px;
+    width: 30px !important;
   }
-  
+
   .carouselItem .hits {
     height: 23px;
     line-height: 23px;
@@ -748,7 +748,7 @@ input::-webkit-inner-spin-button {
   }
   
 .footer { 
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 
   .buttonRed{
