@@ -72,7 +72,7 @@ function Home() {
                         setCardClickLimit(100)
                         setOdd(0)   
                         bomb[i] = true //altera style 
-                        
+                        reset()
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
                             setDisbleButtonAndSelect(true)
