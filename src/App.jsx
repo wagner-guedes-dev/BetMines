@@ -59,7 +59,7 @@ function Home() {
 
     for (let i = 0; i < 25; i++) {
     listItems.push(
-        <div id={i} key={i} 
+        <div id={i} key={i}
         onClick={() => { 
             if(cardClickLimit < limit && verific[i]){ // verificacao para nao virar mais cards que o permitido && verificação para não clicar no mesmo card
                 verific[i] = false // ao passar para false não entra no if, sendo assim não permite dois clicks no mesmo card
@@ -70,11 +70,11 @@ function Home() {
                         star[i] = true //altera style
                     }else{// se caso clicar na bomba
                         setCardClickLimit(100)
+                        setDisbleButtonAndSelect(true)
                         setOdd(0)   
                         bomb[i] = true //altera style 
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
-                            setDisbleButtonAndSelect(true)
                             setCashoutEnable(false)
                             setBtnCashout(false)
                           }, 800);
@@ -98,13 +98,13 @@ function Home() {
             }
         } 
         // className={`card ${flip[i] ? 'flipCard' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}> {flip[i] ? <BsStarFill className="star"/> : <BsCircleFill className="circle"/> } </div>
-        className={`card ${bomb[i] ? 'flipCardBomb' : ''} ${star[i] ? 'flipCardStar' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}>
+        className={`card ${bomb[i] ? 'flipCardBomb' : ''} ${star[i] ? 'flipCardStar' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`} disabled={disbleButtonAndSelect}>
             
-            {bomb[i] ? <FaBomb className={`bomb`} /> : null}
+            {bomb[i] ? <FaBomb className={`bomb`} disabled={disbleButtonAndSelect}/> : null}
 
-            {star[i] ? <BsStarFill className={`star`}/> : null}
+            {star[i] ? <BsStarFill className={`star`} disabled={disbleButtonAndSelect}/> : null}
 
-            {circle[i] ? <BsCircleFill className="circle "/> :  null}
+            {circle[i] ? <BsCircleFill className="circle " disabled={disbleButtonAndSelect}/> :  null}
         </div>
     );
     }
