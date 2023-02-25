@@ -408,10 +408,10 @@ footer{
   margin-top: 60px;
   padding-bottom: 10px;
   background-color: #181818;
-  margin-bottom: -10px;
   position: fixed;
-  width: 100%;
+  right: 0;
   bottom: 0;
+  left: 0;
 }
 
 .carousel {
@@ -743,8 +743,8 @@ input::-webkit-inner-spin-button {
   } 
 
   .area-mines > div {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
   }
 
   .area-mines{
