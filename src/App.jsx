@@ -69,15 +69,15 @@ function Home() {
                     if(flip[i]){
                         star[i] = true //altera style
                     }else{// se caso clicar na bomba
-                        bomb[i] = true //altera style 
                         setCardClickLimit(100)
+                        setOdd(0)   
+                        bomb[i] = true //altera style 
+                        setDisbleButtonAndSelect(true)
+                        setCashoutEnable(false)
+                        setBtnCashout(false)
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
-                            setDisbleButtonAndSelect(true)
-                            setCashoutEnable(false)
-                            setBtnCashout(false)
-                            setOdd(0)             
-                          }, 500);
+                          }, 800);
                         
                         
                         
