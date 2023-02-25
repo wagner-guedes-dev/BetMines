@@ -460,6 +460,7 @@ function Home() {
                                             setDisbleButtonAndSelect(true)
                                             random()
                                             setMoney(money - bet)
+                                            setCardClickLimit(0)
                                         }
                                         }}>
                                         <BsFillCalculatorFill/> Bet
