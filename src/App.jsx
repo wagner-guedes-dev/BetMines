@@ -61,42 +61,42 @@ function Home() {
     listItems.push(
         <div id={i} key={i} 
         onClick={() => { 
-            if(flip[i] === false){
-                bomb[i] = true //altera style 
-                setOdd(0)   
-                setDisbleButtonAndSelect(true)
-                setCashoutEnable(false)
-                setBtnCashout(false)
-                setTimeout(()=> {
-                    setHandleModalLoss(true)     
-                  }, 800);
-                return
-            }else{
-                if(cardClickLimit < limit && verific[i]){ // verificacao para nao virar mais cards que o permitido && verificação para não clicar no mesmo card
-                    verific[i] = false // ao passar para false não entra no if, sendo assim não permite dois clicks no mesmo card
-                    if(disbleButtonAndSelect){
-                        circle[i] = false
-                        setCardClickLimit(cardClickLimit + 1) //limite de clicks no card
-                        if(flip[i]){
-                            star[i] = true //altera style
-                        }
-                        if (cashoutEnable) {
-                            cardClick(numberClick)
-                            flip[i] = true
-                            setBtnCashout(false)
-                            }
-                        }   
-                    }
-                    if(cardClickLimit >= limit ){ // finalizar o jogo apos dar o utlimo click
-                        cashout()
-                        setMoney(bet * odd + money)
+            if(cardClickLimit < limit && verific[i]){ // verificacao para nao virar mais cards que o permitido && verificação para não clicar no mesmo card
+                verific[i] = false // ao passar para false não entra no if, sendo assim não permite dois clicks no mesmo card
+                if(disbleButtonAndSelect){
+                    circle[i] = false
+                    setCardClickLimit(cardClickLimit + 1) //limite de clicks no card
+                    if(flip[i]){
+                        star[i] = true //altera style
+                    }else{// se caso clicar na bomba
+                        setCardClickLimit(100)
+                        setOdd(0)   
+                        bomb[i] = true //altera style 
+                        setDisbleButtonAndSelect(true)
                         setCashoutEnable(false)
-                        setBet(parseFloat(parseFloat(0).toFixed(2)))
-                        reset()
+                        setBtnCashout(false)
+                        setTimeout(()=> {
+                            setHandleModalLoss(true)     
+                          }, 800);
+                        
+                        
+                        
                     }
+                    if (cashoutEnable) {
+                        cardClick(numberClick)
+                        flip[i] = true
+                        setBtnCashout(false)
+                        }
+                    }   
+                }
+                if(cardClickLimit >= limit ){ // finalizar o jogo apos dar o utlimo click
+                    cashout()
+                    setMoney(bet * odd + money)
+                    setCashoutEnable(false)
+                    setBet(parseFloat(parseFloat(0).toFixed(2)))
+                    reset()
                 }
             }
-            
         } 
         // className={`card ${flip[i] ? 'flipCard' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}> {flip[i] ? <BsStarFill className="star"/> : <BsCircleFill className="circle"/> } </div>
         className={`card ${bomb[i] ? 'flipCardBomb' : ''} ${star[i] ? 'flipCardStar' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}>
