@@ -717,11 +717,10 @@ input::-webkit-inner-spin-button {
     width: 75px;
   }
 
- 
   main{
     flex-direction: column;
     align-items: center;
-    margin-top: 0px;
+    margin-top: -15px;
   }
 
   header{
