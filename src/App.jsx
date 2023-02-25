@@ -71,7 +71,6 @@ function Home() {
                     }else{// se caso clicar na bomba
                         setCardClickLimit(100)
                         setDisbleButtonAndSelect(true)
-                        setOdd(0)   
                         bomb[i] = true //altera style 
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
