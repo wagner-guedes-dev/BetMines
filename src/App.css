@@ -717,7 +717,6 @@ input::-webkit-inner-spin-button {
   main{
     flex-direction: column;
     align-items: center;
-    margin-top: 70px;
   }
 
   .carouselItem .value {
