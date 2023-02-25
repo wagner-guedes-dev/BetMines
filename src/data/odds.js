@@ -2,19 +2,19 @@ export default [
     [
         {
             id: 1,
+            value: '1.01',
+        },
+        {
+            id: 2,
             value: '1.03',
         },
         {
-            id: 2,
-            value: '1.07',
-        },
-        {
             id: 3,
-            value: '1.12',
+            value: '1.05',
         },
         {
             id: 4,
-            value: '1.17',
+            value: '1.1',
         },
         {
             id: 5,
@@ -26,7 +26,7 @@ export default [
         },
         {
             id: 7,
-            value: '1.37',
+            value: '1.40',
         },
         {
             id: 8,
@@ -34,81 +34,81 @@ export default [
         },
         {
             id: 9,
-            value: '1.54',
+            value: '1.50',
         },
         {
             id: 10,
-            value: '1.65',
+            value: '1.55',
         },
         {
             id: 11,
-            value: '1.76',
+            value: '1.65',
         },
         {
             id: 12,
-            value: '1.90',
+            value: '1.70',
         },
         {
             id: 13,
-            value: '2.06',
+            value: '1.75',
         },
         {
             id: 14,
-            value: '2.25',
+            value: '1.80',
         },
     ],
     [
         {
             id: 1,
-            value: '1.07',
+            value: '1.10',
         },
         {
             id: 2,
-            value: '1.17',
+            value: '1.15',
         },
         {
             id: 3,
-            value: '1.28',
+            value: '1.20',
         },
         {
             id: 4,
-            value: '1.41',
+            value: '1.22',
         },
         {
             id: 5,
-            value: '1.56',
+            value: '1.25',
         },
         {
             id: 6,
-            value: '1.73',
+            value: '1.30',
         },
         {
             id: 7,
-            value: '1.94',
+            value: '1.35',
         },
         {
             id: 8,
-            value: '2.18',
+            value: '1.40',
         },
         {
             id: 9,
-            value: '2.47',
+            value: '1.46',
         },
         {
             id: 10,
-            value: '2.82',
+            value: '1.52',
         },
         {
             id: 11,
-            value: '3.26',
+            value: '1.76',
         },
         {
             id: 12,
-            value: '3.80',
+            value: '1.80',
         },
         {
             id: 13,
-            value: '4.50',
+            value: '2.00',
         },
     ],
     [
@@ -118,51 +118,51 @@ export default [
         },
         {
             id: 2,
-            value: '1.28',
+            value: '1.15',
         },
         {
             id: 3,
-            value: '1.47',
+            value: '1.20',
         },
         {
             id: 4,
-            value: '1.71',
+            value: '1.25',
         },
         {
             id: 5,
-            value: '1.99',
+            value: '1.30',
         },
         {
             id: 6,
-            value: '2.35',
+            value: '1.35',
         },
         {
             id: 7,
-            value: '2.79',
+            value: '1.45',
         },
         {
             id: 8,
-            value: '3.34',
+            value: '1.54',
         },
         {
             id: 9,
-            value: '4.06',
+            value: '1.66',
         },
         {
             id: 10,
-            value: '5.00',
+            value: '1.75',
         },
         {
             id: 11,
-            value: '6.25',
+            value: '1.90',
         },
         {
             id: 12,
-            value: '7.96',
+            value: '1.96',
         },
         {
             id: 13,
-            value: '10.35',
+            value: '2.50',
         },
     ],
     [
@@ -172,47 +172,47 @@ export default [
         },
         {
             id: 2,
-            value: '1.41',
+            value: '1.25',
         },
         {
             id: 3,
-            value: '1.71',
+            value: '1.50',
         },
         {
             id: 4,
-            value: '2.09',
+            value: '1.70',
         },
         {
             id: 5,
-            value: '2.58',
+            value: '1.90',
         },
         {
             id: 6,
-            value: '3.23',
+            value: '2.00',
         },
         {
             id: 7,
-            value: '4.09',
+            value: '2.19',
         },
         {
             id: 8,
-            value: '5.26',
+            value: '2.56',
         },
         {
             id: 9,
-            value: '6.88',
+            value: '2.88',
         },
         {
             id: 10,
-            value: '9.17',
+            value: '3.17',
         },
         {
             id: 11,
-            value: '12.51',
+            value: '3.51',
         },
         {
             id: 12,
-            value: '17.51',
+            value: '4.51',
         },
     ],
     [
@@ -226,43 +226,43 @@ export default [
         },
         {
             id: 3,
-            value: '1.99',
+            value: '1.80',
         },
         {
             id: 4,
-            value: '2.58',
+            value: '2.00',
         },
         {
             id: 5,
-            value: '3.39',
+            value: '2.25',
         },
         {
             id: 6,
-            value: '4.52',
+            value: '3.00',
         },
         {
             id: 7,
-            value: '6.14',
+            value: '3.35',
         },
         {
             id: 8,
-            value: '8.50',
+            value: '3.80',
         },
         {
             id: 9,
-            value: '12.04',
+            value: '4.04',
         },
         {
             id: 10,
-            value: '17.51',
+            value: '5.51',
         },
         {
             id: 11,
-            value: '26.27',
+            value: '6.27',
         },
         {
             id: 12,
-            value: '40.87',
+            value: '9.87',
         },
     ],
     [
@@ -284,31 +284,31 @@ export default [
         },
         {
             id: 5,
-            value: '4.52',
+            value: '3.90',
         },
         {
             id: 6,
-            value: '6.46',
+            value: '4.46',
         },
         {
             id: 7,
-            value: '9.44',
+            value: '5.44',
         },
         {
             id: 8,
-            value: '14.16',
+            value: '6.16',
         },
         {
             id: 9,
-            value: '21.89',
+            value: '7.89',
         },
         {
             id: 10,
-            value: '35.03',
+            value: '8.03',
         },
         {
             id: 11,
-            value: '58.39',
+            value: '10.39',
         },
     ],
     [
@@ -322,35 +322,35 @@ export default [
         },
         {
             id: 3,
-            value: '2.79',
+            value: '2.39',
         },
         {
             id: 4,
-            value: '4.09',
+            value: '2.99',
         },
         {
             id: 5,
-            value: '6.14',
+            value: '3.44',
         },
         {
             id: 6,
-            value: '9.44',
+            value: '5.44',
         },
         {
             id: 7,
-            value: '14.94',
+            value: '6.94',
         },
         {
             id: 8,
-            value: '24.47',
+            value: '7.47',
         },
         {
             id: 9,
-            value: '41.60',
+            value: '8.60',
         },
         {
             id: 10,
-            value: '73.96',
+            value: '13.96',
         },
     ],
     [
@@ -360,39 +360,39 @@ export default [
         },
         {
             id: 2,
-            value: '2.18',
+            value: '2.02',
         },
         {
             id: 3,
-            value: '3.34',
+            value: '2.99',
         },
         {
             id: 4,
-            value: '5.26',
+            value: '4.26',
         },
         {
             id: 5,
-            value: '8.50',
+            value: '5.50',
         },
         {
             id: 6,
-            value: '14.16',
+            value: '8.16',
         },
         {
             id: 7,
-            value: '24.47',
+            value: '10.47',
         },
         {
             id: 8,
-            value: '44.05',
+            value: '13.05',
         },
         {
             id: 9,
-            value: '83.21',
+            value: '15.21',
         },
         {
             id: 10,
-            value: '166.43',
+            value: '20.43',
         },
     ],
     [
@@ -406,31 +406,31 @@ export default [
         },
         {
             id: 3,
-            value: '4.06',
+            value: '3.06',
         },
         {
             id: 4,
-            value: '6.88',
+            value: '4.88',
         },
         {
             id: 5,
-            value: '12.04',
+            value: '5.04',
         },
         {
             id: 6,
-            value: '21.89',
+            value: '6.89',
         },
         {
             id: 7,
-            value: '41.60',
+            value: '8.60',
         },
         {
             id: 8,
-            value: '83.21',
+            value: '10.21',
         },
         {
             id: 9,
-            value: '176.83',
+            value: '25.83',
         },
     ],
     [
@@ -440,35 +440,35 @@ export default [
         },
         {
             id: 2,
-            value: '2.82',
+            value: '2.00',
         },
         {
             id: 3,
-            value: '5.00',
+            value: '4.00',
         },
         {
             id: 4,
-            value: '9.17',
+            value: '6.17',
         },
         {
             id: 5,
-            value: '17.51',
+            value: '8.51',
         },
         {
             id: 6,
-            value: '35.03',
+            value: '10.03',
         },
         {
             id: 7,
-            value: '73.96',
+            value: '13.96',
         },
         {
             id: 8,
-            value: '166.43',
+            value: '16.43',
         },
         {
             id: 9,
-            value: '404.18',
+            value: '32.18',
         },
     ],
     [
@@ -478,31 +478,31 @@ export default [
         },
         {
             id: 2,
-            value: '3.26',
+            value: '2.68',
         },
         {
             id: 3,
-            value: '6.25',
+            value: '3.25',
         },
         {
             id: 4,
-            value: '12.51',
+            value: '4.51',
         },
         {
             id: 5,
-            value: '26.27',
+            value: '8.27',
         },
         {
             id: 6,
-            value: '58.39',
+            value: '13.39',
         },
         {
             id: 7,
-            value: '138.69',
+            value: '18.69',
         },
         {
             id: 8,
-            value: '356.63',
+            value: '36.63',
         },
     ],
     [
@@ -512,27 +512,27 @@ export default [
         },
         {
             id: 2,
-            value: '3.80',
+            value: '2.80',
         },
         {
             id: 3,
-            value: '7.96',
+            value: '3.96',
         },
         {
             id: 4,
-            value: '17.51',
+            value: '6.51',
         },
         {
             id: 5,
-            value: '40.87',
+            value: '12.87',
         },
         {
             id: 6,
-            value: '102.19',
+            value: '13.19',
         },
         {
             id: 7,
-            value: '277.38',
+            value: '16.38',
         } 
     ],
     [
@@ -546,23 +546,23 @@ export default [
         },
         {
             id: 3,
-            value: '10.35',
+            value: '8.35',
         },
         {
             id: 4,
-            value: '25.30',
+            value: '12.30',
         },
         {
             id: 5,
-            value: '66.42',
+            value: '16.42',
         },
         {
             id: 6,
-            value: '189.78',
+            value: '23.78',
         },
         {
             id: 7,
-            value: '73.96',
+            value: '35.96',
         } 
     ],
     [
@@ -572,23 +572,23 @@ export default [
         },
         {
             id: 2,
-            value: '5.40',
+            value: '4.40',
         },
         {
             id: 3,
-            value: '13.80',
+            value: '9.80',
         },
         {
             id: 4,
-            value: '37.95',
+            value: '13.95',
         },
         {
             id: 5,
-            value: '113.87',
+            value: '35.87',
         },
         {
             id: 6,
-            value: '379.57',
+            value: '45.57',
         },
     ],
     [
@@ -602,19 +602,19 @@ export default [
         },
         {
             id: 3,
-            value: '18.97',
+            value: '12.97',
         },
         {
             id: 4,
-            value: '59.64',
+            value: '25.64',
         },
         {
             id: 5,
-            value: '208.76',
+            value: '38.76',
         },
         {
             id: 6,
-            value: '835.06',
+            value: '78.06',
         },
     ],
     [
@@ -624,19 +624,19 @@ export default [
         },
         {
             id: 2,
-            value: '8.25',
+            value: '7.25',
         },
         {
             id: 3,
-            value: '27.11',
+            value: '14.11',
         },
         {
             id: 4,
-            value: '99.41',
+            value: '32.41',
         },
         {
             id: 5,
-            value: '417.53',
+            value: '89.53',
         },
     ],
     [
