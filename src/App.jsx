@@ -75,9 +75,10 @@ function Home() {
                             setDisbleButtonAndSelect(true)
                             setCashoutEnable(false)
                             setBtnCashout(false)
+                            setOdd(0)
                             return
                           }, 500);
-                        
+
                         
                     }
                     if (cashoutEnable) {
