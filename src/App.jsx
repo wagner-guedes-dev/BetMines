@@ -76,9 +76,9 @@ function Home() {
                             setCashoutEnable(false)
                             setBtnCashout(false)
                             setOdd(0)
-                            return
+                            
                           }, 500);
-
+                          return  
                         
                     }
                     if (cashoutEnable) {
