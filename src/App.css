@@ -95,8 +95,8 @@ header{
 }
 
 .area-mines > div {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   background-color: var(--cor-primaria);
   border-radius: 10px;
   display: flex;
@@ -674,8 +674,8 @@ input::-webkit-inner-spin-button {
   }
 
   .area-mines > div {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
   }
 
   
@@ -715,15 +715,19 @@ input::-webkit-inner-spin-button {
 @media screen and (max-width: 500px){
   .carouselItem {
     width: 75px;
-    margin-bottom: -10px;
   }
 
   main{
     flex-direction: column;
     align-items: center;
-    
+    margin-top: 10px;
   }
 
+  header{
+    margin: 0 auto;
+    justify-content: space-between;
+    max-width: 350px;
+  }
   .carouselItem .value {
     height: 23px;
     line-height: 23px;
