@@ -87,13 +87,11 @@ function Home() {
                     }
                     
                     }   
-                }
-                if(cardClickLimit >= limit ){ // finalizar o jogo apos dar o utlimo click
+                }else{ // finalizar o jogo apos dar o utlimo click
                     cashout()
                     setMoney(bet * odd + money)
                     setCashoutEnable(false)
                     setBet(parseFloat(parseFloat(0).toFixed(2)))
-                    reset()
                 }
             }
         } 
@@ -447,7 +445,6 @@ function Home() {
                                         setMoney(bet * odd + money)
                                         setCashoutEnable(false)
                                         setBet(parseFloat(parseFloat(0).toFixed(2)))
-                                        reset()
                                         }
                                     } 
                                     >
