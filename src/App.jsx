@@ -76,6 +76,7 @@ function Home() {
                     }else{// se caso clicar na bomba
                         setCardClickLimit(100)
                         setDisbleButtonAndSelect(true)
+                        setOdd(0)
                         bomb[i] = true //altera style 
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
@@ -92,6 +93,7 @@ function Home() {
                     setMoney(bet * odd + money)
                     setCashoutEnable(false)
                     setBet(parseFloat(parseFloat(0).toFixed(2)))
+                    setOdd(0)
                 }
             }
         } 
