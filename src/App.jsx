@@ -78,9 +78,12 @@ function Home() {
                         setDisbleButtonAndSelect(true)
 <<<<<<< HEAD
                         setOdd(0)
+<<<<<<< HEAD
                         cashout()
 =======
 >>>>>>> parent of 93e99d7 (Update App.jsx)
+=======
+>>>>>>> parent of c198322 (Update App.jsx)
                         bomb[i] = true //altera style 
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
@@ -224,7 +227,7 @@ function Home() {
     }
 
     const cashout = () => {
-        if (odd === 0) {
+        if (odd !== 0) {
             const newMoney = odd * bet;
             let moneyFormatted = newMoney.toFixed(2);
             setGain(moneyFormatted);
