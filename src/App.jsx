@@ -76,6 +76,20 @@ function Home() {
                     }else{// se caso clicar na bomba
                         setCardClickLimit(100)
                         setDisbleButtonAndSelect(true)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        setOdd(0)
+<<<<<<< HEAD
+                        cashout()
+=======
+>>>>>>> parent of 93e99d7 (Update App.jsx)
+=======
+>>>>>>> parent of c198322 (Update App.jsx)
+=======
+>>>>>>> parent of 93e99d7 (Update App.jsx)
+=======
+>>>>>>> parent of 93e99d7 (Update App.jsx)
                         bomb[i] = true //altera style 
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
@@ -95,7 +109,7 @@ function Home() {
                 }
             }
         } 
-        // className={`card ${flip[i] ? 'flipCard' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}> {flip[i] ? <BsStarFill className="star"/> : <BsCircleFill className="circle"/> } </div>
+      
         className={`card ${bomb[i] ? 'flipCardBomb' : ''} ${star[i] ? 'flipCardStar' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`} disabled={disbleButtonAndSelect}>
             
             {bomb[i] ? <FaBomb className={`bomb`} disabled={disbleButtonAndSelect}/> : null}
