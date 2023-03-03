@@ -77,6 +77,7 @@ function Home() {
                         setCardClickLimit(100)
                         setDisbleButtonAndSelect(true)
                         setOdd(0)
+                        cashout()
                         bomb[i] = true //altera style 
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
@@ -221,7 +222,7 @@ function Home() {
     }
 
     const cashout = () => {
-        if (odd !== 0) {
+        if (odd === 0) {
             const newMoney = odd * bet;
             let moneyFormatted = newMoney.toFixed(2);
             setGain(moneyFormatted);
