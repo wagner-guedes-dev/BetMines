@@ -76,8 +76,11 @@ function Home() {
                     }else{// se caso clicar na bomba
                         setCardClickLimit(100)
                         setDisbleButtonAndSelect(true)
+<<<<<<< HEAD
                         setOdd(0)
                         cashout()
+=======
+>>>>>>> parent of 93e99d7 (Update App.jsx)
                         bomb[i] = true //altera style 
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
@@ -94,7 +97,6 @@ function Home() {
                     setMoney(bet * odd + money)
                     setCashoutEnable(false)
                     setBet(parseFloat(parseFloat(0).toFixed(2)))
-                    setOdd(0)
                 }
             }
         } 
