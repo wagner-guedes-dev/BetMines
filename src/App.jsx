@@ -78,6 +78,7 @@ function Home() {
                         setDisbleButtonAndSelect(true)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         setOdd(0)
 <<<<<<< HEAD
                         cashout()
@@ -85,6 +86,8 @@ function Home() {
 >>>>>>> parent of 93e99d7 (Update App.jsx)
 =======
 >>>>>>> parent of c198322 (Update App.jsx)
+=======
+>>>>>>> parent of 93e99d7 (Update App.jsx)
 =======
 >>>>>>> parent of 93e99d7 (Update App.jsx)
                         bomb[i] = true //altera style 
