@@ -103,7 +103,7 @@ function Home() {
                 }
             }
         } 
-        // className={`card ${flip[i] ? 'flipCard' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}> {flip[i] ? <BsStarFill className="star"/> : <BsCircleFill className="circle"/> } </div>
+      
         className={`card ${bomb[i] ? 'flipCardBomb' : ''} ${star[i] ? 'flipCardStar' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`} disabled={disbleButtonAndSelect}>
             
             {bomb[i] ? <FaBomb className={`bomb`} disabled={disbleButtonAndSelect}/> : null}
