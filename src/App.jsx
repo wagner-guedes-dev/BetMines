@@ -81,7 +81,6 @@ function Home() {
 <<<<<<< HEAD
                         setOdd(0)
 <<<<<<< HEAD
-<<<<<<< HEAD
                         cashout()
 =======
 >>>>>>> parent of 93e99d7 (Update App.jsx)
@@ -91,8 +90,6 @@ function Home() {
 >>>>>>> parent of 93e99d7 (Update App.jsx)
 =======
 >>>>>>> parent of 93e99d7 (Update App.jsx)
-=======
->>>>>>> parent of c198322 (Update App.jsx)
                         bomb[i] = true //altera style 
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
