@@ -98,7 +98,7 @@ function Home() {
                 }
             }
         } 
-        // className={`card ${flip[i] ? 'flipCard' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`}> {flip[i] ? <BsStarFill className="star"/> : <BsCircleFill className="circle"/> } </div>
+      
         className={`card ${bomb[i] ? 'flipCardBomb' : ''} ${star[i] ? 'flipCardStar' : ''} ${disbleButtonAndSelect ? '' : 'disabled'}`} disabled={disbleButtonAndSelect}>
             
             {bomb[i] ? <FaBomb className={`bomb`} disabled={disbleButtonAndSelect}/> : null}
@@ -222,7 +222,7 @@ function Home() {
     }
 
     const cashout = () => {
-        if (odd === 0) {
+        if (odd !== 0) {
             const newMoney = odd * bet;
             let moneyFormatted = newMoney.toFixed(2);
             setGain(moneyFormatted);
