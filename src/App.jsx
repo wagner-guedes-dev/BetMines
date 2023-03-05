@@ -76,13 +76,14 @@ function Home() {
                     }else{// se caso clicar na bomba
                         setCardClickLimit(100)
                         setDisbleButtonAndSelect(true)
-                        cardClick()
+                        
+                        
                         setNumberClick(1)
                         //virar todos os cards apos errar
                         flip.forEach((item, position)=> {
-
                             circle[position] = false
                             star[position] = item
+                            
                             if(item === false){
                                 bomb[position] = true
                                 console.log(position)
@@ -91,13 +92,6 @@ function Home() {
                         })
                         
                         
-
-                        setOdd(0)
-
-                        cashout()
-
-                        bomb[i] = true //altera style 
-
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
                             setCashoutEnable(false)
