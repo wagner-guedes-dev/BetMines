@@ -91,6 +91,13 @@ function Home() {
                         })
                         
                         
+
+                        setOdd(0)
+
+                        cashout()
+
+                        bomb[i] = true //altera style 
+
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
                             setCashoutEnable(false)
