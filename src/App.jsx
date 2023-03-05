@@ -76,13 +76,26 @@ function Home() {
                     }else{// se caso clicar na bomba
                         setCardClickLimit(100)
                         setDisbleButtonAndSelect(true)
-                        setOdd(0)
-                        bomb[i] = true //altera style 
+                        cardClick()
+                        setNumberClick(1)
+                        //virar todos os cards apos errar
+                        flip.forEach((item, position)=> {
+
+                            circle[position] = false
+                            star[position] = item
+                            if(item === false){
+                                bomb[position] = true
+                                console.log(position)
+                            }
+                            
+                        })
+                        
+                        
                         setTimeout(()=> {
                             setHandleModalLoss(true)     
                             setCashoutEnable(false)
                             setBtnCashout(false)
-                          }, 800);
+                          }, 1000);
                         
                           return  
                     }
@@ -202,6 +215,7 @@ function Home() {
         setCircle(Array(25).fill(true));
         setVerific(Array(25).fill(true));
         setCardClickLimit(0)
+        setOdd(0)
     }
 
     const handleMines = () => {
@@ -209,10 +223,12 @@ function Home() {
     }
 
     const cardClick = (position) => {
+        console.log(position)
         if (cashoutEnable && (position <= limit)) {
             let filtered = oddsData[mines -1].filter((i) => {
                 return i.id == position
             })
+
             setOdd(filtered[0].value);
             setNumberClick(numberClick + 1);
         }
